@@ -1,0 +1,40 @@
+<nav class="navbar navbar-transparent">
+  <div class="container">
+
+  <!--  <div class="navbar-header">
+      <%= link_to "ShareYourIdea", root_path, class: "navbar-brand" %>
+    </div> -->
+
+    
+
+    <ul class="nav navbar-nav navbar-right">
+
+      <% if user_signed_in? %>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Log In", new_user_session_path %></li>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+      <% end %>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+        aria-expanded="false">Categories <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <% Category.all.each do |category| %>
+            <li class="<%= 'active' if params[:category] == category.name %>">
+              <%= link_to category.name, ideas_path(category: category.name), class: "Links" %>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+
+      <% if user_signed_in?%>
+        <li><%= link_to "Share Idea", new_idea_path %></li>
+      <%end%>
+    </ul>
+
+  </div>
+</nav>

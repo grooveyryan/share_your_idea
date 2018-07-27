@@ -1,0 +1,175 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ body, html {
+      height: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 300;
+}
+
+ .background {
+   background: linear-gradient(#185a9d, #43cea2);
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100%;
+   background-attachment: fixed;
+ }
+
+/* Navbar */
+
+.navbar {
+
+	text-transform: uppercase;
+}
+.navbar-transparent {
+
+	padding-bottom: 5px;
+	padding-top: 5px;
+
+	.navbar-nav > li > a {
+		color: #fff;
+		&:hover {
+			color: darken(#f1c40f, 5%);
+			transition: 0.5s;
+
+		}
+	}
+
+	.navbar-header {
+
+		.navbar-brand {
+			color: #222;
+			letter-spacing: 1.4px;
+		}
+
+	}
+
+	.dropdown-menu > li > a:hover {
+		background-color: darken(#f1c40f, 5%);
+		color: #fff;
+
+	}
+
+	.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
+		background-color: darken(#f1c40f, 5%);
+		color: #fff;
+
+
+	}
+
+}
+
+.dropdown-menu > .active > a {
+	background-color: #f1c40f;
+	color: #fff;
+
+}
+
+
+/* Panels */
+
+.log-in {
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(#fceabb, #f8b500);
+}
+
+
+.panel-heading{
+  h1 {
+    text-align: center;
+  }
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.alert {
+  margin-bottom: 0px;
+}
+
+/* New Idea form */
+
+.category-select {
+  padding: 16px;
+}
+
+/* Shared Ideas */
+.ideas-wrapper {
+  padding-top: 50px;
+  padding-bottom: 5px;
+  margin: 0 auto;
+
+  max-width: 642px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+
+.idea {
+  background: linear-gradient(#fceabb, #f8b500);
+  border-color: #edeeee;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  margin-bottom: 5px;
+  margin-top: 30px;
+
+  .idea-head {
+    border-style: 1px, solid;
+    border-radius: 10px;
+    flex-direction: row;
+    height: 64px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
+    color: #125688;
+    font-size: 15px;
+    line-height: 18px;
+    .user-name, .time-ago {
+      display: inline;
+    }
+    .user-name {
+      margin-bottom: 50px;
+      font-weight: 500;
+    }
+    .time-ago {
+      color: #A5A7AA;
+      float: right;
+    }
+  }
+}
+
+.content-content {
+  padding-left: 50px;
+  padding-top: 50px;
+}
+
+.title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

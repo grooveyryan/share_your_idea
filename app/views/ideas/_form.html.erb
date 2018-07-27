@@ -1,0 +1,28 @@
+
+
+
+
+        <%= simple_form_for @idea, html: { multipart: true } do |f| %>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <%= f.error_notification %>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="form-group text-center">
+
+              <h2>Share your idea:</h2>
+
+              <div class="category-select">
+                <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select Category") %>
+              </div>
+              <%= f.input :title, label: false, placeholder: 'Title' %>
+            </div>
+            <div class="form-group text-center">
+              <%= f.input :content, label: false, placeholder: 'Whats the big idea?'%>
+            </div>
+            <div class="form-group text-center">
+              <%= f.button :submit, 'Share Idea', class: 'btn-lg btn-info btn-block' %>
+            </div>
+          </div>
+        <% end %>
